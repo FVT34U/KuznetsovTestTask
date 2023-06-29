@@ -1,0 +1,53 @@
+﻿<Window x:Class="TestTask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTask"
+        mc:Ignorable="d"
+        Title="База знаний состава двигателей" Height="480" Width="640">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"></ColumnDefinition>
+            <ColumnDefinition Width="320"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TreeView Grid.Column="0" x:Name="TreeView1">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Nodes}">
+                    <TextBlock Text="{Binding Name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <Grid Grid.Column="1" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Наименование:" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Height="20" Width="80" x:Name="ComponentNameTextBox"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Grid.Row="2" Content="Количество:" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Height="20" Width="80" x:Name="ComponentValueTextBox"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="4" Content="Добавить двигатель" x:Name="AddEngineButton"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="5" Content="Добавить компонент" x:Name="AddComponentButton"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="6" Content="Переименовать" x:Name="RenameButton"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="7" Content="Удалить" x:Name="DeleteButton"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="8" Content="Вывести отчёт" x:Name="ShowLogButton"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
