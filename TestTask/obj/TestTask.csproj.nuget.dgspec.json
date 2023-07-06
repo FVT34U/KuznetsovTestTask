@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Work\\ZAVOD\\TestTask\\TestTask.csproj": {}
+    "C:\\Users\\djsen\\Documents\\GitHub\\KuznetsovTestTask\\TestTask\\TestTask.csproj": {}
   },
   "projects": {
-    "E:\\Work\\ZAVOD\\TestTask\\TestTask.csproj": {
+    "C:\\Users\\djsen\\Documents\\GitHub\\KuznetsovTestTask\\TestTask\\TestTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Work\\ZAVOD\\TestTask\\TestTask.csproj",
+        "projectUniqueName": "C:\\Users\\djsen\\Documents\\GitHub\\KuznetsovTestTask\\TestTask\\TestTask.csproj",
         "projectName": "TestTask",
-        "projectPath": "E:\\Work\\ZAVOD\\TestTask\\TestTask.csproj",
-        "packagesPath": "C:\\Users\\capta\\.nuget\\packages\\",
-        "outputPath": "E:\\Work\\ZAVOD\\TestTask\\obj\\",
+        "projectPath": "C:\\Users\\djsen\\Documents\\GitHub\\KuznetsovTestTask\\TestTask\\TestTask.csproj",
+        "packagesPath": "C:\\Users\\djsen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\djsen\\Documents\\GitHub\\KuznetsovTestTask\\TestTask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\capta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\djsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,16 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

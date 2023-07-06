@@ -27,7 +27,43 @@ namespace TestTask
         {
             InitializeComponent();
 
-            GenerateStartTreeView();
+            //GenerateStartTreeView();
+            
+            UpdateTreeView();
+
+            PrintAllComponents();
+        }
+
+        private static void PrintAllComponents()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var engineComponents = db.EngineComponents.ToList();
+                foreach (var eng in engineComponents)
+                {
+                    Console.WriteLine($"{eng.Id} {eng.Name} {eng.Value} {eng.ParentId}");
+                }
+            }
+        }
+
+        private void UpdateTreeView()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var components = db.EngineComponents.ToList();
+                _nodes = new ObservableCollection<Node>();
+                
+                foreach (var component in components)
+                {
+                    _nodes.Add(new Node
+                    {
+                        Name = component.Name,
+                        Value = component.Value
+                    });
+                }
+                
+                TreeView1.ItemsSource = _nodes;
+            }
         }
 
         private void GenerateStartTreeView()
@@ -58,6 +94,26 @@ namespace TestTask
             };
 
             TreeView1.ItemsSource = _nodes;
+        }
+
+        private void AddEngineButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var component = new EngineComponent
+            {
+                Name = "Двигатель",
+                Value = 0,
+                ParentId = null
+            };
+            
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.EngineComponents.Add(component);
+                db.SaveChanges();
+            }
+            
+            UpdateTreeView();
+            PrintAllComponents();
+            //throw new NotImplementedException();
         }
     }
 }

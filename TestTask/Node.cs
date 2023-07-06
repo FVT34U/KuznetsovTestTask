@@ -4,12 +4,12 @@ namespace TestTask;
 
 public class Node
 {
-    private string _name = "";
-    private int _value = 0;
+    private string? _name = "";
+    private int? _value = 0;
     
-    public string Name
+    public string? Name
     {
-        get => this._name;
+        get => _name;
         set
         {
             if (value.Contains("Двигатель"))
@@ -21,9 +21,9 @@ public class Node
         } 
     }
 
-    public int Value
+    public int? Value
     {
-        get => this._value;
+        get => _value;
         set => this._value = value;
     }
     public ObservableCollection<Node>? Nodes { get; set; }
