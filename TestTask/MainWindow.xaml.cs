@@ -55,11 +55,16 @@ namespace TestTask
                 
                 foreach (var component in components)
                 {
+                    if (component.ParentId == null) continue;
+
                     _nodes.Add(new Node
                     {
+                        Value = component.Value,
                         Name = component.Name,
-                        Value = component.Value
+                        ParentId = component.ParentId
                     });
+                    
+                    components.Remove(component);
                 }
                 
                 TreeView1.ItemsSource = _nodes;
