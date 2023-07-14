@@ -41,13 +41,13 @@
             <Button Grid.Row="4" Content="Добавить двигатель" x:Name="AddEngineButton"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddEngineButton_OnClick"/>
             <Button Grid.Row="5" Content="Добавить компонент" x:Name="AddComponentButton"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddComponentButton_OnClick"/>
             <Button Grid.Row="6" Content="Переименовать" x:Name="RenameButton"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Click="RenameButton_OnClick"/>
             <Button Grid.Row="7" Content="Удалить" x:Name="DeleteButton"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Click="DeleteButton_OnClick"/>
             <Button Grid.Row="8" Content="Вывести отчёт" x:Name="ShowLogButton"
-                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Click="ShowLogButton_OnClick"/>
         </Grid>
     </Grid>
 </Window>
